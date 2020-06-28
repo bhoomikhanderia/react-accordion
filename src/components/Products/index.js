@@ -4,7 +4,6 @@ import {Accordion, Card, Button} from "react-bootstrap";
 import SubCategory from "../SubCategories"
 
 const Products = ({ products }) => {
-    console.log("in products");
     return products.map((category, index) => (
         <Accordion key={index} defaultActiveKey="0">
             <Card>

@@ -12,7 +12,6 @@ const Home = ({products, loadProducts, selectedProduct}) => {
     useEffect(() => {
         if (!products || products.length === 0) {
             loadProducts(DATA);
-            console.log(DATA); 
         }     
     });
 
