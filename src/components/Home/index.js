@@ -4,9 +4,10 @@ import NavBar from '../NavBar';
 import {loadProducts} from '../../redux/actions/loadProducts';
 import {selectProduct} from '../../redux/actions/selectProduct';
 import {DATA} from '../../constant/data';
-import Products from '../Products/index';
+import Products from '../Products';
+import Panel from '../Panel';
 
-const Home = ({products, loadProducts}) => {
+const Home = ({products, loadProducts, selectedProduct}) => {
 
     useEffect(() => {
         if (!products || products.length === 0) {
@@ -16,18 +17,22 @@ const Home = ({products, loadProducts}) => {
     });
 
     return (
-        <div className="App">
-            <div className="container">
-            <NavBar/>
-            <Products products={products}/>
-            </div>           
+        <div>
+            <div className="App">
+                <div className="container">
+                <NavBar/>
+                <Products products={products}/>
+                </div>           
+            </div>
+            <Panel selectedProduct={selectedProduct}/>
         </div>
     )
 }
 
-export const mapStateToProps = ({ products }) => {
+export const mapStateToProps = ({ products, selectedProduct}) => {
     return {
         products: products,
+        selectedProduct: selectedProduct
     }
 }
 

@@ -1,5 +1,6 @@
 import {
-    SELECT_PRODUCT
+    SELECT_PRODUCT,
+    REMOVE_SELECTED_PRODUCT,
   } from '../../constant/actionconstant'
   
   export const INITIAL_STATE = [];
@@ -9,6 +10,9 @@ import {
     switch (type) {
       case SELECT_PRODUCT: {
         return payload;
+      }
+      case REMOVE_SELECTED_PRODUCT: {
+        return null;
       }
       default: return null;
     }
