@@ -30,5 +30,16 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "A react application to display a list of products grouped by categories and subcategories in an accordion UI, which expands and contracts on click.",
+  "main": "index.js",
+  "devDependencies": {},
+  "keywords": [
+    "javascript",
+    "react",
+    "accordion",
+    "product-accordion"
+  ],
+  "author": "Bhoomi Khanderia",
+  "license": "ISC"
 }
