@@ -1,10 +1,10 @@
 import React  from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Row } from "react-bootstrap";
-// import { Config } from '../config';
 import { connect } from 'react-redux';
 import { selectProduct } from '../../redux/actions/selectProduct';
 
+const BASE_URL = "https://www.aesop.com/au/api/v1/nav/shop";
 
 const ProductCard = ({ items, selectProduct }) => {
     if (items && items.length > 0) {
@@ -18,25 +18,25 @@ const ProductCard = ({ items, selectProduct }) => {
             lastRow.push(category)
         })
         return itemsUnderRows.map((itemsUnderRow, rowIndex) => (
-            <Row key={rowIndex} className="row-with-margin">
+            <Row key={rowIndex} className="row-margin">
                 {itemsUnderRow.map((tmpProduct, itemIndex) => {
                     let product = tmpProduct
                     return (
                         <div
                             key={itemIndex}
-                            className="row-item col-xs-12 col-sm-4 col-md-3 card-item"
+                            className="row-item col-xs-12 col-sm-4 col-md-3 product-card"
                             onClick={() => selectProduct(product)}
                         >
                             <div key={product.name} className="image-container">
-                                <img className="image-contained"
+                                <img className="product-img"
                                      id={'image-' + product.name}
-                                     src={product.imageUrl}
+                                     src={BASE_URL + (product.thumbnail || product.imageUrl)}
                                      alt={product.name}
                                 />
-                                <div className="item-desc">
+                                <div className="card-details">
                                     <strong>{product.name}</strong>
                                     <br/>
-                                    <div className="item-description">{product.shortDescription}</div>
+                                    <div className="card-desc">{product.shortDescription}</div>
                                 </div>
                             </div>
                         </div>
