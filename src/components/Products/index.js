@@ -10,7 +10,7 @@ const Products = ({ products }) => {
             <Card>
                 <Card.Header>
                     <Accordion.Toggle as={Button} variant="link" eventKey={'category' + index}>
-                        {category.name}
+                        <span className="cat-name">{category.name}</span>
                     </Accordion.Toggle>
                 </Card.Header>
                 <Accordion.Collapse eventKey={'category' + index}>

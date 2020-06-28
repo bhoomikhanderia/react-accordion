@@ -11,7 +11,7 @@ const showVariants = (variants) => {
                     <Card.Header>
                         <Accordion.Toggle as={Button} variant="link"
                                           eventKey={'variant' + index}>
-                            <h4>{variant.name || variant.imageAlt}</h4>
+                            <h4 className="cat-name">{variant.name || variant.imageAlt}</h4>
                         </Accordion.Toggle>
                     </Card.Header>
                     <Accordion.Collapse eventKey={'variant' + index}>

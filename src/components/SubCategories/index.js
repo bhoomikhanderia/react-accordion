@@ -12,7 +12,7 @@ const SubCategory = ({ subcategories }) => {
                     <Card.Header>
                         <Accordion.Toggle as={Button} variant="link"
                                           eventKey={'subcategory' + subcategory.name + index}>
-                            {subcategory.name}
+                            <span className="cat-name">{subcategory.name}</span>
                         </Accordion.Toggle>
                     </Card.Header>
                     <Accordion.Collapse eventKey={'subcategory' + subcategory.name + index}>
