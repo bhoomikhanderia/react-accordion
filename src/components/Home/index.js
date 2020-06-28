@@ -2,13 +2,17 @@ import React, {useEffect} from 'react';
 import { connect } from 'react-redux';
 import NavBar from '../NavBar';
 import {loadProducts} from '../../redux/actions/loadProducts';
+import {selectProduct} from '../../redux/actions/selectProduct';
 import {DATA} from '../../constant/data';
 import Products from '../Products/index';
 
-const Home = ({products}) => {
+const Home = ({products, loadProducts}) => {
 
     useEffect(() => {
-            loadProducts(DATA)        
+        if (!products || products.length === 0) {
+            loadProducts(DATA);
+            console.log(DATA); 
+        }     
     });
 
     return (
@@ -27,4 +31,4 @@ export const mapStateToProps = ({ products }) => {
     }
 }
 
-export default connect(mapStateToProps , { loadProducts })(Home);
+export default connect(mapStateToProps , { loadProducts, selectProduct })(Home);
