@@ -17,8 +17,8 @@ const Home = ({products, loadProducts, selectedProduct}) => {
     });
 
     return (
-        <div>
-            <div className="App">
+        <div className="App">
+            <div>
                 <div className="container">
                 <NavBar/>
                 <Products products={products}/>

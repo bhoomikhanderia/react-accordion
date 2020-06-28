@@ -11,7 +11,7 @@ const showVariants = (variants) => {
                     <Card.Header>
                         <Accordion.Toggle as={Button} variant="link"
                                           eventKey={'variant' + index}>
-                            {variant.name}
+                            <h4>{variant.name || variant.imageAlt}</h4>
                         </Accordion.Toggle>
                     </Card.Header>
                     <Accordion.Collapse eventKey={'variant' + index}>
@@ -37,7 +37,7 @@ const PanelContent = ({product}) => {
     if (product) {
         return  (
             <div>
-                <h1>{product.name}</h1>
+                <h3>{product.name}</h3>
                 {showVariants(product.variants)}
             </div>
         )
